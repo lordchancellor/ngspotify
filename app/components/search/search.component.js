@@ -25,7 +25,8 @@ var SearchComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'sp-search',
-            templateUrl: 'search.component.html'
+            templateUrl: 'search.component.html',
+            styles: ["\n\t\t.genre {\n\t\t\ttext-transform: capitalize;\n\t\t}\n\t"]
         }), 
         __metadata('design:paramtypes', [spotify_service_1.SpotifyService])
     ], SearchComponent);

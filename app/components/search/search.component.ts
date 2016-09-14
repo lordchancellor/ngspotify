@@ -6,7 +6,12 @@ import { SpotifyService } from '../../services/spotify.service';
 @Component({
 	moduleId: module.id,
 	selector: 'sp-search',
-	templateUrl: 'search.component.html'
+	templateUrl: 'search.component.html',
+	styles: [`
+		.genre {
+			text-transform: capitalize;
+		}
+	`]
 })
 export class SearchComponent {
 	searchStr: string;

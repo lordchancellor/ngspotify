@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { SpotifyService } from '../../services/spotify.service';
@@ -9,9 +9,10 @@ import { Album } from '../../../Album';
 @Component({
 	moduleId: module.id,
 	selector: 'sp-artist',
-	templateUrl: 'artist.component.html'
+	templateUrl: 'artist.component.html',
+	styleUrls: ['artist.component.css']
 })
-export class ArtistComponent implements OnInit {
+export class ArtistComponent implements OnInit, OnDestroy {
 	id: string;
 	artist: Artist[];
 	albums: Album[];
@@ -28,6 +29,15 @@ export class ArtistComponent implements OnInit {
 					.subscribe(artist => {
 						this.artist = artist;
 					})
+
+				this.spotifyService.getAlbums(id)
+					.subscribe(albums => {
+						this.albums = albums.items;
+					})
 			})
+	}
+
+	ngOnDestroy() {
+		//TODO Unsubscribe
 	}
 }

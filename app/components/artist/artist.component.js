@@ -25,13 +25,21 @@ var ArtistComponent = (function () {
                 .subscribe(function (artist) {
                 _this.artist = artist;
             });
+            _this.spotifyService.getAlbums(id)
+                .subscribe(function (albums) {
+                _this.albums = albums.items;
+            });
         });
+    };
+    ArtistComponent.prototype.ngOnDestroy = function () {
+        //TODO Unsubscribe
     };
     ArtistComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'sp-artist',
-            templateUrl: 'artist.component.html'
+            templateUrl: 'artist.component.html',
+            styleUrls: ['artist.component.css']
         }), 
         __metadata('design:paramtypes', [spotify_service_1.SpotifyService, router_1.ActivatedRoute])
     ], ArtistComponent);
