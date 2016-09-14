@@ -11,9 +11,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { SearchComponent } from './components/search/search.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
-	declarations: [AppComponent, NavbarComponent, AboutComponent, SearchComponent],
+	declarations: [AppComponent, NavbarComponent, AboutComponent, SearchComponent, ArtistComponent],
 	imports: [BrowserModule, routes, FormsModule, ReactiveFormsModule, HttpModule],
 	bootstrap: [AppComponent],
 	providers: [SpotifyService]
